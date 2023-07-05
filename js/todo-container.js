@@ -34,6 +34,7 @@ class TodoContainer extends HTMLElement {
       console.log(false);
     }
 
+    /* Runs the render function in the todo-list file */
     this.todoListEl.render();
 
     /* Zeros out the #todo-input after adding the todo */ 
