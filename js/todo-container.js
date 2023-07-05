@@ -3,7 +3,7 @@ class TodoContainer extends HTMLElement {
     super();
 
     /* The custom element holder */
-    this.todoEl = this.querySelector('todo-element');
+    this.todoListEl = document.querySelector('todo-list');
 
     this.innerHTML = `
       <input type="text" id="todo-input" placeholder="Eat, Sleep, Code">
@@ -34,7 +34,7 @@ class TodoContainer extends HTMLElement {
       console.log(false);
     }
 
-    console.log(this.todoEl)
+    this.todoListEl.render();
 
     /* Zeros out the #todo-input after adding the todo */ 
     this.inputEl.value = "";
