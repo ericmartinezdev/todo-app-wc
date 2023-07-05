@@ -4,7 +4,7 @@ class TodoElement extends HTMLElement {
   }
 
   render() {
-
+    console.log(4523);
   }
 }
 

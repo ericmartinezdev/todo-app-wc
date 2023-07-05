@@ -1,4 +1,4 @@
-import TodoContainer from "../todo-container.js";
+import TodoContainer from "./todo-container.js";
 import TodoElement from "./todo.js"
 
 window.todos = {

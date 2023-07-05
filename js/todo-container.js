@@ -2,6 +2,9 @@ class TodoContainer extends HTMLElement {
   constructor() {
     super();
 
+    /* The custom element holder */
+    this.todoEl = this.querySelector('todo-element');
+
     this.innerHTML = `
       <input type="text" id="todo-input" placeholder="Eat, Sleep, Code">
       <button id="add-todo-btn">Add Todo</button>
@@ -15,7 +18,7 @@ class TodoContainer extends HTMLElement {
     this.divEl = this.querySelector('.todo-list');
     
     /* Captures the input element so I can use the value */
-    this.inputEl = this.querySelector('#todo-input')    
+    this.inputEl = this.querySelector('#todo-input');
   }
 
   addTodo() {
@@ -30,6 +33,8 @@ class TodoContainer extends HTMLElement {
     } else {
       console.log(false);
     }
+
+    console.log(this.todoEl)
 
     /* Zeros out the #todo-input after adding the todo */ 
     this.inputEl.value = "";
