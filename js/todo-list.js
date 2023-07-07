@@ -15,14 +15,14 @@ class TodoList extends HTMLElement {
     const todo_list = document.createElement('ul')
     
     /* forEach function to create a li, button, span, and custom-element for every todo that's in the todos array */
-    window.todos.tasks.forEach((task) => {
+    window.todos.tasks.forEach((task, i) => {
       todo_list.innerHTML += `
-        <li>
-          <todo-element>
+        <todo-element>
+          <li data-index="${i}">
             <span>${task.text}</span>
             <button class="destroyer">x</button>
-          </todo-element>
-        </li>
+          </li>
+        </todo-element>
       `;
     });
 

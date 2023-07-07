@@ -40,6 +40,11 @@ class TodoContainer extends HTMLElement {
     /* Zeros out the #todo-input after adding the todo */ 
     this.inputEl.value = "";
   }
+
+  deleteTodo(todoIndex) {
+    window.todos.tasks.splice([todoIndex], 1);
+    this.todoListEl.render();
+  }
 }
 
 export default TodoContainer;
