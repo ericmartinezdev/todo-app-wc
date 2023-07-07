@@ -27,8 +27,8 @@ class TodoContainer extends HTMLElement {
       completed: false
     }
     
-    /* if the #todo-input is not empty, it will add the todo. */
-    if(this.inputEl.value) {
+    /* if the #todo-input is not empty, it will add the todo. .trim() will remove spaces before and after the text */
+    if(this.inputEl.value.trim()) {
       window.todos.tasks.push(todoObj);
     } else {
       console.log(false);

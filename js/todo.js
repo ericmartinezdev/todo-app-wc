@@ -4,7 +4,7 @@ class TodoElement extends HTMLElement {
 
     this.input = document.querySelector('#todo-input');
     this.todoContainer = document.querySelector('todo-container');
-    this.changeEvent = new Event('change', { bubbles: true });
+    // this.changeEvent = new Event('change', { bubbles: true });
     this.li = this.querySelector('li');
     
     this.querySelectorAll('.destroyer').forEach(
@@ -14,7 +14,6 @@ class TodoElement extends HTMLElement {
 
   onButtonClick(event) {
     event.preventDefault();
-    console.log(this.input);
     this.todoContainer.deleteTodo(this.li.dataset.index);
   }
 }
