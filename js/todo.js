@@ -31,7 +31,11 @@ class TodoElement extends HTMLElement {
 
   updateButtonClick(event) {
     event.preventDefault();
-    this.todoContainer.updateTodo(this.li.dataset.index, this.editInput.value);
+    if(this.editInput.value.trim() != "") {
+      this.todoContainer.updateTodo(this.li.dataset.index, this.editInput.value.trim());
+    } else {
+      this.todoContainer.deleteTodo(this.li.dataset.index);
+    }
   }
 }
 
