@@ -24,7 +24,8 @@ class TodoContainer extends HTMLElement {
   addTodo() {
     const todoObj = {
       text: this.inputEl.value,
-      completed: false
+      completed: false, 
+      edit: false
     }
     
     /* if the #todo-input is not empty, it will add the todo. .trim() will remove spaces before and after the text */
@@ -43,6 +44,17 @@ class TodoContainer extends HTMLElement {
 
   deleteTodo(todoIndex) {
     window.todos.tasks.splice([todoIndex], 1);
+    this.todoListEl.render();
+  }
+
+  editTodo(todoIndex) {
+    window.todos.tasks[todoIndex].edit = true
+    this.todoListEl.render();
+  }
+
+  updateTodo(todoIndex, updatedTask) {
+    window.todos.tasks[todoIndex].edit = false
+    window.todos.tasks[todoIndex].text = updatedTask
     this.todoListEl.render();
   }
 }

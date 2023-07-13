@@ -16,14 +16,27 @@ class TodoList extends HTMLElement {
     
     /* forEach function to create a li, button, span, and custom-element for every todo that's in the todos array */
     window.todos.tasks.forEach((task, i) => {
-      todo_list.innerHTML += `
+      if(task.edit) {
+        todo_list.innerHTML += `
         <todo-element>
-          <li data-index="${i}">
-            <span>${task.text}</span>
-            <button class="destroyer">x</button>
-          </li>
+        <li data-index="${i}">
+        <input class="edited-todo-text" value="${task.text}">
+        <button class="destroyer">x</button>
+        <button class="update-todo">Update</button>
+        </li>
         </todo-element>
-      `;
+        `;
+      } else {
+        todo_list.innerHTML += `
+        <todo-element>
+        <li data-index="${i}">
+        <span class="todo-text">${task.text}</span>
+        <button class="destroyer">x</button>
+        <button class="edit-todo">Edit</button>
+        </li>
+        </todo-element>
+        `;
+      }
     });
 
     /* adds the ul inside the div  */
